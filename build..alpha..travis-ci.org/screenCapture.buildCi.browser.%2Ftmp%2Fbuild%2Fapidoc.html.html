@@ -1,0 +1,1128 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/oncletom/tld.js">tldjs (v1.7.0)</a>
+</h1>
+<h4>JavaScript API to work against complex domain names, subdomains and URIs.</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tldjs">module tldjs</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tldjs.rule">
+            function <span class="apidocSignatureSpan">tldjs.</span>rule
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tldjs.tld">
+            function <span class="apidocSignatureSpan">tldjs.</span>tld
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">tldjs.</span>rule.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">tldjs.</span>rules</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">tldjs.</span>tld.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">tldjs.</span>updater</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">tldjs.</span>validHosts</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tldjs.rule">module tldjs.rule</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tldjs.rule.rule">
+            function <span class="apidocSignatureSpan">tldjs.</span>rule
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tldjs.rule.prototype">module tldjs.rule.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tldjs.rule.prototype.getExceptionPattern">
+            function <span class="apidocSignatureSpan">tldjs.rule.prototype.</span>getExceptionPattern
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tldjs.rule.prototype.getNormalPattern">
+            function <span class="apidocSignatureSpan">tldjs.rule.prototype.</span>getNormalPattern
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tldjs.rule.prototype.getNormalXld">
+            function <span class="apidocSignatureSpan">tldjs.rule.prototype.</span>getNormalXld
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tldjs.rule.prototype.getPattern">
+            function <span class="apidocSignatureSpan">tldjs.rule.prototype.</span>getPattern
+            <span class="apidocSignatureSpan">(before, after)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tldjs.rule.prototype.getWildcardPattern">
+            function <span class="apidocSignatureSpan">tldjs.rule.prototype.</span>getWildcardPattern
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tldjs.tld">module tldjs.tld</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tldjs.tld.tld">
+            function <span class="apidocSignatureSpan">tldjs.</span>tld
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tldjs.tld.cleanHostValue">
+            function <span class="apidocSignatureSpan">tldjs.tld.</span>cleanHostValue
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tldjs.tld.escapeRegExp">
+            function <span class="apidocSignatureSpan">tldjs.tld.</span>escapeRegExp
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tldjs.tld.extractTldFromHost">
+            function <span class="apidocSignatureSpan">tldjs.tld.</span>extractTldFromHost
+            <span class="apidocSignatureSpan">(host)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tldjs.tld.getCandidateRule">
+            function <span class="apidocSignatureSpan">tldjs.tld.</span>getCandidateRule
+            <span class="apidocSignatureSpan">(host, rules, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tldjs.tld.init">
+            function <span class="apidocSignatureSpan">tldjs.tld.</span>init
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tldjs.tld.prototype">module tldjs.tld.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tldjs.tld.prototype.getDomain">
+            function <span class="apidocSignatureSpan">tldjs.tld.prototype.</span>getDomain
+            <span class="apidocSignatureSpan">(host)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tldjs.tld.prototype.getPublicSuffix">
+            function <span class="apidocSignatureSpan">tldjs.tld.prototype.</span>getPublicSuffix
+            <span class="apidocSignatureSpan">(host)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tldjs.tld.prototype.getRulesForTld">
+            function <span class="apidocSignatureSpan">tldjs.tld.prototype.</span>getRulesForTld
+            <span class="apidocSignatureSpan">(tld, default_rule)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tldjs.tld.prototype.getSubdomain">
+            function <span class="apidocSignatureSpan">tldjs.tld.prototype.</span>getSubdomain
+            <span class="apidocSignatureSpan">(host)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tldjs.tld.prototype.isValid">
+            function <span class="apidocSignatureSpan">tldjs.tld.prototype.</span>isValid
+            <span class="apidocSignatureSpan">(host)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tldjs.tld.prototype.tldExists">
+            function <span class="apidocSignatureSpan">tldjs.tld.prototype.</span>tldExists
+            <span class="apidocSignatureSpan">(host)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tldjs.updater">module tldjs.updater</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tldjs.updater.run">
+            function <span class="apidocSignatureSpan">tldjs.updater.</span>run
+            <span class="apidocSignatureSpan">(done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">tldjs.updater.</span>providerUrl</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tldjs" id="apidoc.module.tldjs">module tldjs</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tldjs.rule" id="apidoc.element.tldjs.rule">
+        function <span class="apidocSignatureSpan">tldjs.</span>rule
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Rule(data){
+  data = data || {};
+
+  this.exception = data.exception || false;
+  this.firstLevel = data.firstLevel || '';
+  this.secondLevel = data.secondLevel || null;
+  this.isHost = data.isHost || false;
+  this.source = data.source || '';
+  this.wildcard = data.wildcard || false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tldjs.tld" id="apidoc.element.tldjs.tld">
+        function <span class="apidocSignatureSpan">tldjs.</span>tld
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function tld() {
+<span class="apidocCodeCommentSpan">  /* jshint validthis: true */
+</span>  this.validHosts = [];
+  this.rules = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tldjs.rule" id="apidoc.module.tldjs.rule">module tldjs.rule</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tldjs.rule.rule" id="apidoc.element.tldjs.rule.rule">
+        function <span class="apidocSignatureSpan">tldjs.</span>rule
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Rule(data){
+  data = data || {};
+
+  this.exception = data.exception || false;
+  this.firstLevel = data.firstLevel || '';
+  this.secondLevel = data.secondLevel || null;
+  this.isHost = data.isHost || false;
+  this.source = data.source || '';
+  this.wildcard = data.wildcard || false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tldjs.rule.prototype" id="apidoc.module.tldjs.rule.prototype">module tldjs.rule.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tldjs.rule.prototype.getExceptionPattern" id="apidoc.element.tldjs.rule.prototype.getExceptionPattern">
+        function <span class="apidocSignatureSpan">tldjs.rule.prototype.</span>getExceptionPattern
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getExceptionPattern(){
+  return (this.secondLevel || '') + '\\.' + this.firstLevel;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Rule.prototype.getPattern = function getPattern(before, after){
+var pattern = '';
+
+before = (before === undefined) ? '(': before+'';
+after = (after === undefined) ? ')$': after+'';
+
+if (this.exception === true){
+  pattern = this.<span class="apidocCodeKeywordSpan">getExceptionPattern</span>();
+}
+else if (this.isHost === true) {
+  pattern = this.firstLevel;
+}
+else{
+  pattern = '[^\\.]+' + (this.wildcard ? this.getWildcardPattern() : this.getNormalPattern());
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tldjs.rule.prototype.getNormalPattern" id="apidoc.element.tldjs.rule.prototype.getNormalPattern">
+        function <span class="apidocSignatureSpan">tldjs.rule.prototype.</span>getNormalPattern
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getNormalPattern(){
+  return (this.secondLevel ? '\\.' + this.secondLevel : '') + '\\.' + this.firstLevel;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  if (this.exception === true){
+    pattern = this.getExceptionPattern();
+  }
+  else if (this.isHost === true) {
+    pattern = this.firstLevel;
+  }
+  else{
+    pattern = '[^\\.]+' + (this.wildcard ? this.getWildcardPattern() : this.<span class="apidocCodeKeywordSpan">getNormalPattern
+</span>());
+  }
+
+  return before + pattern + after;
+};
+
+module.exports = Rule;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tldjs.rule.prototype.getNormalXld" id="apidoc.element.tldjs.rule.prototype.getNormalXld">
+        function <span class="apidocSignatureSpan">tldjs.rule.prototype.</span>getNormalXld
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getNormalXld(){
+  return (this.secondLevel ? '.' + this.secondLevel : '') + '.' + this.firstLevel;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/**
+* Returns a pattern suitable for wildcard rule
+* Mostly for internal use
+*
+* @return {String}
+*/
+Rule.prototype.getWildcardPattern = function getWildcardPattern(){
+ return '\\.[^\\.]+' + this.<span class="apidocCodeKeywordSpan">getNormalXld</span>().replace(/\./g, '\\.');
+};
+
+/**
+* Returns a pattern suitable for exception rule
+* Mostly for internal use
+*
+* @return {String}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tldjs.rule.prototype.getPattern" id="apidoc.element.tldjs.rule.prototype.getPattern">
+        function <span class="apidocSignatureSpan">tldjs.rule.prototype.</span>getPattern
+        <span class="apidocSignatureSpan">(before, after)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getPattern(before, after){
+  var pattern = '';
+
+  before = (before === undefined) ? '(': before+'';
+  after = (after === undefined) ? ')$': after+'';
+
+  if (this.exception === true){
+    pattern = this.getExceptionPattern();
+  }
+  else if (this.isHost === true) {
+    pattern = this.firstLevel;
+  }
+  else{
+    pattern = '[^\\.]+' + (this.wildcard ? this.getWildcardPattern() : this.getNormalPattern());
+  }
+
+  return before + pattern + after;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  rules = this.getRulesForTld(hostTld, new Rule({"firstLevel": hostTld, "isHost": this.validHosts.indexOf(hostTld
+) !== -1}));
+  rule = tld.getCandidateRule(host, rules);
+
+  if (rule === null) {
+    return null;
+  }
+
+  host.replace(new RegExp(rule.<span class="apidocCodeKeywordSpan">getPattern</span>()), function (m, d) {
+    domain = d;
+  });
+
+  return domain;
+};
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tldjs.rule.prototype.getWildcardPattern" id="apidoc.element.tldjs.rule.prototype.getWildcardPattern">
+        function <span class="apidocSignatureSpan">tldjs.rule.prototype.</span>getWildcardPattern
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getWildcardPattern(){
+  return '\\.[^\\.]+' + this.getNormalXld().replace(/\./g, '\\.');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  if (this.exception === true){
+    pattern = this.getExceptionPattern();
+  }
+  else if (this.isHost === true) {
+    pattern = this.firstLevel;
+  }
+  else{
+    pattern = '[^\\.]+' + (this.wildcard ? this.<span class="apidocCodeKeywordSpan">getWildcardPattern</span>() : this
+.getNormalPattern());
+  }
+
+  return before + pattern + after;
+};
+
+module.exports = Rule;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tldjs.tld" id="apidoc.module.tldjs.tld">module tldjs.tld</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tldjs.tld.tld" id="apidoc.element.tldjs.tld.tld">
+        function <span class="apidocSignatureSpan">tldjs.</span>tld
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function tld() {
+<span class="apidocCodeCommentSpan">  /* jshint validthis: true */
+</span>  this.validHosts = [];
+  this.rules = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tldjs.tld.cleanHostValue" id="apidoc.element.tldjs.tld.cleanHostValue">
+        function <span class="apidocSignatureSpan">tldjs.tld.</span>cleanHostValue
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function cleanHostValue(value){
+  value = trim(value).toLowerCase();
+
+  var parts = URL.parse(hasPrefixRE.test(value) ? value : '//' + value, null, true);
+
+  if (parts.hostname &amp;&amp; !invalidHostnameChars.test(parts.hostname)) { return parts.hostname; }
+  if (!invalidHostnameChars.test(value)) { return value; }
+  return '';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @api
+ * @param {string} host
+ * @return {boolean}
+ */
+tld.prototype.tldExists = function tldExists(host){
+var hostTld;
+
+host = tld.<span class="apidocCodeKeywordSpan">cleanHostValue</span>(host);
+
+// Easy case, it's a TLD
+if (this.rules[host]){
+  return true;
+}
+
+// Popping only the TLD of the hostname
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tldjs.tld.escapeRegExp" id="apidoc.element.tldjs.tld.escapeRegExp">
+        function <span class="apidocSignatureSpan">tldjs.tld.</span>escapeRegExp
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function escapeRegExp(s) {
+  return String(s).replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ domain = this.getDomain(host);
+
+ // No domain found? Just abort, abort!
+ if (domain === null){
+   return null;
+ }
+
+ r = '\\.?'+ tld.<span class="apidocCodeKeywordSpan">escapeRegExp</span>(domain)+'$';
+ subdomain = host.replace(new RegExp(r, 'i'), '');
+
+ return subdomain;
+};
+
+/**
+* Checking if a host string is valid
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tldjs.tld.extractTldFromHost" id="apidoc.element.tldjs.tld.extractTldFromHost">
+        function <span class="apidocSignatureSpan">tldjs.tld.</span>extractTldFromHost
+        <span class="apidocSignatureSpan">(host)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function extractTldFromHost(host){
+  return host.split('.').pop();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+ // Easy case, it's a TLD
+ if (this.rules[host]){
+   return true;
+ }
+
+ // Popping only the TLD of the hostname
+ hostTld = tld.<span class="apidocCodeKeywordSpan">extractTldFromHost</span>(host);
+
+ return this.rules[hostTld] !== undefined;
+};
+
+/**
+* Returns the public suffix (including exact matches)
+*
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tldjs.tld.getCandidateRule" id="apidoc.element.tldjs.tld.getCandidateRule">
+        function <span class="apidocSignatureSpan">tldjs.tld.</span>getCandidateRule
+        <span class="apidocSignatureSpan">(host, rules, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getCandidateRule(host, rules, options) {
+  var rule = {'normal': null, 'exception': null};
+
+  options = options || { lazy: false };
+
+  _someFunction(rules, function (r) {
+    var pattern;
+
+    // sld matching or validHost? escape the loop immediately (except if it's an exception)
+    if ('.' + host === r.getNormalXld()) {
+      if (options.lazy || r.exception || r.isHost) {
+        rule.normal = r;
+      }
+
+      return true;
+    }
+
+    // otherwise check as a complete host
+    // if it's an exception, we want to loop a bit more to a normal rule
+    pattern = '.+' + r.getNormalPattern() + '$';
+
+    if ((new RegExp(pattern)).test(host)) {
+      rule[r.exception ? 'exception' : 'normal'] = r;
+      return !r.exception;
+    }
+
+    return false;
+  });
+
+  // favouring the exception if encountered
+  // previously we were copy-altering a rule, creating inconsistent results based on rule order order
+  // @see https://github.com/oncletom/tld.js/pull/35
+  if (rule.normal &amp;&amp; rule.exception) {
+    return rule.exception;
+  }
+
+  return rule.normal;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  if (host in this.rules){
+	  return host;
+  }
+
+  host = tld.cleanHostValue(host);
+  hostTld = tld.extractTldFromHost(host);
+  rules = this.getRulesForTld(hostTld);
+  rule = tld.<span class="apidocCodeKeywordSpan">getCandidateRule</span>(host, rules, { lazy: true });
+
+  if (rule === null) {
+    return null;
+  }
+
+  return rule.getNormalXld().slice(1);
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tldjs.tld.init" id="apidoc.element.tldjs.tld.init">
+        function <span class="apidocSignatureSpan">tldjs.tld.</span>init
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function init() {
+  return new tld();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+
+
+
+"use strict";
+
+var tld = require('./lib/tld.js').<span class="apidocCodeKeywordSpan">init</span>();
+tld.rules = require('./rules.json');
+
+module.exports = tld;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tldjs.tld.prototype" id="apidoc.module.tldjs.tld.prototype">module tldjs.tld.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tldjs.tld.prototype.getDomain" id="apidoc.element.tldjs.tld.prototype.getDomain">
+        function <span class="apidocSignatureSpan">tldjs.tld.prototype.</span>getDomain
+        <span class="apidocSignatureSpan">(host)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getDomain(host) {
+  var domain = null, hostTld, rules, rule;
+
+  if (this.isValid(host) === false) {
+    return null;
+  }
+
+  host = tld.cleanHostValue(host);
+  hostTld = tld.extractTldFromHost(host);
+  rules = this.getRulesForTld(hostTld, new Rule({"firstLevel": hostTld, "isHost": this.validHosts.indexOf(hostTld) !== -1}));
+  rule = tld.getCandidateRule(host, rules);
+
+  if (rule === null) {
+    return null;
+  }
+
+  host.replace(new RegExp(rule.getPattern()), function (m, d) {
+    domain = d;
+  });
+
+  return domain;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+# Using It
+
+## Node.js
+
+```javascript
+var tld = require('tldjs');
+
+tld.<span class="apidocCodeKeywordSpan">getDomain</span>('mail.google.co.uk');
+// -&gt; 'google.co.uk'
+```
+
+## Browser
+
+A browser version is made available thanks to [Browserify CDN](http://wzrd.in/).
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tldjs.tld.prototype.getPublicSuffix" id="apidoc.element.tldjs.tld.prototype.getPublicSuffix">
+        function <span class="apidocSignatureSpan">tldjs.tld.prototype.</span>getPublicSuffix
+        <span class="apidocSignatureSpan">(host)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getPublicSuffix(host) {
+  var hostTld, rules, rule;
+
+  if (host in this.rules){
+	  return host;
+  }
+
+  host = tld.cleanHostValue(host);
+  hostTld = tld.extractTldFromHost(host);
+  rules = this.getRulesForTld(hostTld);
+  rule = tld.getCandidateRule(host, rules, { lazy: true });
+
+  if (rule === null) {
+    return null;
+  }
+
+  return rule.getNormalXld().slice(1);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+## getPublicSuffix()
+
+Returns the public suffix for a given host.
+
+```javascript
+tld.<span class="apidocCodeKeywordSpan">getPublicSuffix</span>('google.com'); // returns `com`
+tld.getPublicSuffix('fr.google.com'); // returns `com`
+tld.getPublicSuffix('google.co.uk'); // returns `co.uk`
+tld.getPublicSuffix('s3.amazonaws.com'); // returns `s3.amazonaws.com`
+```
+
+## isValid()
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tldjs.tld.prototype.getRulesForTld" id="apidoc.element.tldjs.tld.prototype.getRulesForTld">
+        function <span class="apidocSignatureSpan">tldjs.tld.prototype.</span>getRulesForTld
+        <span class="apidocSignatureSpan">(tld, default_rule)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getRulesForTld(tld, default_rule) {
+  var exception = '!';
+  var wildcard = '*';
+  var append_tld_rule = true;
+  var rules = this.rules[tld];
+
+  // Already parsed
+  // Array.isArray polyfill for IE8
+  if (Object.prototype.toString.call(rules)  === '[object Array]') {
+    return rules;
+  }
+
+  // Nothing found, apply some default value
+  if (rules === void 0) {
+    return default_rule ? [ default_rule ] : [];
+  }
+
+  // Parsing needed
+  rules = _mapFunction(rules.split('|'), function transformAsRule (sld) {
+    var first_bit = sld[0];
+
+    if (first_bit === exception || first_bit === wildcard) {
+      sld = sld.slice(1);
+
+      if (!sld) {
+        append_tld_rule = false;
+      }
+    }
+
+    return new Rule({
+      "firstLevel":  tld,
+      "secondLevel": sld,
+      "exception":   first_bit === exception,
+      "wildcard":    first_bit === wildcard
+    });
+  });
+
+  // Always prepend to make it the latest rule to be applied
+  if (append_tld_rule) {
+    rules.unshift(new Rule({
+      "firstLevel": tld
+    }));
+  }
+
+  this.rules[tld] = rules.reverse();
+
+  return rules;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+if (host in this.rules){
+	  return host;
+}
+
+host = tld.cleanHostValue(host);
+hostTld = tld.extractTldFromHost(host);
+rules = this.<span class="apidocCodeKeywordSpan">getRulesForTld</span>(hostTld);
+rule = tld.getCandidateRule(host, rules, { lazy: true });
+
+if (rule === null) {
+  return null;
+}
+
+return rule.getNormalXld().slice(1);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tldjs.tld.prototype.getSubdomain" id="apidoc.element.tldjs.tld.prototype.getSubdomain">
+        function <span class="apidocSignatureSpan">tldjs.tld.prototype.</span>getSubdomain
+        <span class="apidocSignatureSpan">(host)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getSubdomain(host){
+  var domain, r, subdomain;
+
+  host = tld.cleanHostValue(host);
+  domain = this.getDomain(host);
+
+  // No domain found? Just abort, abort!
+  if (domain === null){
+    return null;
+  }
+
+  r = '\\.?'+ tld.escapeRegExp(domain)+'$';
+  subdomain = host.replace(new RegExp(r, 'i'), '');
+
+  return subdomain;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+## getSubdomain()
+
+Returns the complete subdomain for a given host.
+
+```javascript
+tld.<span class="apidocCodeKeywordSpan">getSubdomain</span>('google.com'); // returns ``
+tld.getSubdomain('fr.google.com'); // returns `fr`
+tld.getSubdomain('google.co.uk'); // returns ``
+tld.getSubdomain('foo.google.co.uk'); // returns `foo`
+tld.getSubdomain('moar.foo.google.co.uk'); // returns `moar.foo`
+tld.getSubdomain('t.co'); // returns ``
+tld.getSubdomain('fr.t.co'); // returns `fr`
+tld.getSubdomain('https://user:password@example.co.uk:8080/some/path?and&amp;query#hash'); // returns ``
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tldjs.tld.prototype.isValid" id="apidoc.element.tldjs.tld.prototype.isValid">
+        function <span class="apidocSignatureSpan">tldjs.tld.prototype.</span>isValid
+        <span class="apidocSignatureSpan">(host)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isValid(host) {
+  return typeof host === 'string' &amp;&amp; (this.validHosts.indexOf(host) !== -1 || (host.indexOf('.') !== -1 &amp;&amp; host[0] !== '.'));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+## isValid()
+
+Checks if the host string is valid.
+It does not check if the *tld* exists.
+
+```javascript
+tld.<span class="apidocCodeKeywordSpan">isValid</span>('google.com'); // returns `true`
+tld.isValid('.google.com'); // returns `false`
+tld.isValid('my.fake.domain'); // returns `true`
+tld.isValid('localhost'); // returns `false`
+tld.isValid('https://user:password@example.co.uk:8080/some/path?and&amp;query#hash'); // returns `true`
+```
+
+# Troubleshouting
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tldjs.tld.prototype.tldExists" id="apidoc.element.tldjs.tld.prototype.tldExists">
+        function <span class="apidocSignatureSpan">tldjs.tld.prototype.</span>tldExists
+        <span class="apidocSignatureSpan">(host)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function tldExists(host){
+  var hostTld;
+
+  host = tld.cleanHostValue(host);
+
+  // Easy case, it's a TLD
+  if (this.rules[host]){
+    return true;
+  }
+
+  // Popping only the TLD of the hostname
+  hostTld = tld.extractTldFromHost(host);
+
+  return this.rules[hostTld] !== undefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+# API
+
+## tldExists()
+
+Checks if the TLD is valid for a given host.
+
+```javascript
+tld.<span class="apidocCodeKeywordSpan">tldExists</span>('google.com'); // returns `true`
+tld.tldExists('google.local'); // returns `false` (not an explicit registered TLD)
+tld.tldExists('com'); // returns `true`
+tld.tldExists('uk'); // returns `true`
+tld.tldExists('co.uk'); // returns `true` (because `uk` is a valid TLD)
+tld.tldExists('amazon.fancy.uk'); // returns `true` (still because `uk` is a valid TLD)
+tld.tldExists('amazon.co.uk'); // returns `true` (still because `uk` is a valid TLD)
+tld.tldExists('https://user:password@example.co.uk:8080/some/path?and&amp;query#hash'); // returns `true`
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tldjs.updater" id="apidoc.module.tldjs.updater">module tldjs.updater</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tldjs.updater.run" id="apidoc.element.tldjs.updater.run">
+        function <span class="apidocSignatureSpan">tldjs.updater.</span>run
+        <span class="apidocSignatureSpan">(done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function runUpdater(done){
+  done = typeof done === 'function' ? done : function(){};
+
+  var req = http.request(providerUrl, function (res) {
+    var body = '';
+
+    if (res.statusCode !== 200) {
+      res.destroy();
+      return done(new Error('tldjs: remote server responded with HTTP status ' + res.statusCode));
+    }
+
+    res.setEncoding('utf8');
+
+    res.on('data', function(d) {
+      body += d;
+    });
+
+    res.on('end', function() {
+      var tlds = parser.parse(body);
+      var task_result = exportTask(tlds);
+      var filename = task_result[0];
+      var data = task_result[1];
+
+      data = JSON.stringify(data);
+
+      fs.writeFile(join(__dirname, '..', filename), data, 'utf-8', done);
+    });
+  });
+
+  req.setTimeout(5000);
+  req.on('error', done);
+  req.end();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
