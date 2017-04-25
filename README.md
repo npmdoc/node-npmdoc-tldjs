@@ -1,4 +1,7 @@
-# api documentation for  [tldjs (v1.7.0)](https://github.com/oncletom/tld.js)  [![npm package](https://img.shields.io/npm/v/npmdoc-tldjs.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-tldjs) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-tldjs.svg)](https://travis-ci.org/npmdoc/node-npmdoc-tldjs)
+# npmdoc-tldjs
+
+#### basic api documentation for  [tldjs (v1.7.0)](https://github.com/oncletom/tld.js)  [![npm package](https://img.shields.io/npm/v/npmdoc-tldjs.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-tldjs) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-tldjs.svg)](https://travis-ci.org/npmdoc/node-npmdoc-tldjs)
+
 #### JavaScript API to work against complex domain names, subdomains and URIs.
 
 [![NPM](https://nodei.co/npm/tldjs.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/tldjs)
@@ -113,7 +116,8 @@
             "publicsuffix-org": "https://publicsuffix.org/list/effective_tld_names.dat"
         }
     },
-    "version": "1.7.0"
+    "version": "1.7.0",
+    "bin": {}
 }
 ```
 
