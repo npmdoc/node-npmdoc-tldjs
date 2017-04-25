@@ -81,6 +81,12 @@
 
         <li>
 
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">tldjs.</span>publicsuffix_org</span>
+
+        </li>
+
+        <li>
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">tldjs.</span>rule.prototype</span>
 
         </li>
@@ -99,13 +105,44 @@
 
         <li>
 
-            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">tldjs.</span>updater</span>
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">tldjs.</span>update</span>
 
         </li>
 
         <li>
 
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">tldjs.</span>validHosts</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tldjs.publicsuffix_org">module tldjs.publicsuffix_org</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tldjs.publicsuffix_org.domainBuilder">
+            function <span class="apidocSignatureSpan">tldjs.publicsuffix_org.</span>domainBuilder
+            <span class="apidocSignatureSpan">(row)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tldjs.publicsuffix_org.filterRow">
+            function <span class="apidocSignatureSpan">tldjs.publicsuffix_org.</span>filterRow
+            <span class="apidocSignatureSpan">(row)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tldjs.publicsuffix_org.parse">
+            function <span class="apidocSignatureSpan">tldjs.publicsuffix_org.</span>parse
+            <span class="apidocSignatureSpan">(body)</span>
+            </a>
 
         </li>
 
@@ -289,12 +326,12 @@
 
     </ol></li>
 
-    <li class="apidocModuleLi"><a href="#apidoc.module.tldjs.updater">module tldjs.updater</a><ol>
+    <li class="apidocModuleLi"><a href="#apidoc.module.tldjs.update">module tldjs.update</a><ol>
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.tldjs.updater.run">
-            function <span class="apidocSignatureSpan">tldjs.updater.</span>run
+            <a class="apidocElementLiA" href="#apidoc.element.tldjs.update.run">
+            function <span class="apidocSignatureSpan">tldjs.update.</span>run
             <span class="apidocSignatureSpan">(done)</span>
             </a>
 
@@ -302,7 +339,7 @@
 
         <li>
 
-            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">tldjs.updater.</span>providerUrl</span>
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">tldjs.update.</span>providerUrl</span>
 
         </li>
 
@@ -360,6 +397,109 @@
 
 
 
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tldjs.publicsuffix_org" id="apidoc.module.tldjs.publicsuffix_org">module tldjs.publicsuffix_org</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tldjs.publicsuffix_org.domainBuilder" id="apidoc.element.tldjs.publicsuffix_org.domainBuilder">
+        function <span class="apidocSignatureSpan">tldjs.publicsuffix_org.</span>domainBuilder
+        <span class="apidocSignatureSpan">(row)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">domainBuilder = function (row){
+  var rule = {};
+
+  row = punycode.toASCII(row.trim());
+
+  //setting initial rule
+  rule.source = row;
+
+  //exception
+  row = row.replace(/^!(.+)$/, function(m, tld){
+    rule.exception = true;
+
+    return tld;
+  });
+
+  //wildcard
+  row = row.replace(/^(\*\.)(.+)$/, function(m, dummy, tld){
+    rule.wildcard = true;
+
+    return tld;
+  });
+
+  //splitting domains
+  row.replace(/^((.+)\.)?([^\.]+)$/, function(m, dummy, secondLevel, firstLevel){
+    rule.firstLevel = firstLevel;
+
+    if (secondLevel){
+      rule.secondLevel = secondLevel;
+    }
+
+  });
+
+  return rule;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tldjs.publicsuffix_org.filterRow" id="apidoc.element.tldjs.publicsuffix_org.filterRow">
+        function <span class="apidocSignatureSpan">tldjs.publicsuffix_org.</span>filterRow
+        <span class="apidocSignatureSpan">(row)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">filterRow = function (row) {
+  return (/^\/\//).test(row) ? null : row;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tldjs.publicsuffix_org.parse" id="apidoc.element.tldjs.publicsuffix_org.parse">
+        function <span class="apidocSignatureSpan">tldjs.publicsuffix_org.</span>parse
+        <span class="apidocSignatureSpan">(body)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parse = function (body){
+  return (body+&#x27;&#x27;)
+    .split(/\n/m)
+    .filter(PublicSuffixOrgParser.filterRow)
+    .map(PublicSuffixOrgParser.domainBuilder);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// scheme      = ALPHA *( ALPHA / DIGIT / &#x22;+&#x22; / &#x22;-&#x22; / &#x22;.&#x22; )
+var hasPrefixRE = /^(([a-z][a-z0-9+.-]*)?:)?\/\//;
+var invalidHostnameChars = /[^A-Za-z0-9.-]/;
+
+tld.cleanHostValue = function cleanHostValue(value){
+  value = trim(value).toLowerCase();
+
+  var parts = URL.<span class="apidocCodeKeywordSpan">parse</span>(hasPrefixRE.test(value) ? value : &#x27;//&#x27; + value, null
+, true);
+
+  if (parts.hostname &#x26;&#x26; !invalidHostnameChars.test(parts.hostname)) { return parts.hostname; }
+  if (!invalidHostnameChars.test(value)) { return value; }
+  return &#x27;&#x27;;
+};
+
+/**
+...</pre></li>
+    </ul>
 
 
 </div>
@@ -1075,12 +1215,12 @@ tld.tldExists(&#x27;https://user:password@example.co.uk:8080/some/path?and&#x26;
 </div>
 
 <div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.tldjs.updater" id="apidoc.module.tldjs.updater">module tldjs.updater</a></h1>
+<h1><a href="#apidoc.module.tldjs.update" id="apidoc.module.tldjs.update">module tldjs.update</a></h1>
 
 
     <h2>
-        <a href="#apidoc.element.tldjs.updater.run" id="apidoc.element.tldjs.updater.run">
-        function <span class="apidocSignatureSpan">tldjs.updater.</span>run
+        <a href="#apidoc.element.tldjs.update.run" id="apidoc.element.tldjs.update.run">
+        function <span class="apidocSignatureSpan">tldjs.update.</span>run
         <span class="apidocSignatureSpan">(done)</span>
         </a>
     </h2>
@@ -1118,7 +1258,23 @@ tld.tldExists(&#x27;https://user:password@example.co.uk:8080/some/path?and&#x26;
   req.on(&#x27;error&#x27;, done);
   req.end();
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var updater = require(&#x27;./update.js&#x27;);
+var SHOULD_UPDATE = process.env.npm_config_tldjs_update_rules === &#x27;true&#x27;;
+
+
+if (SHOULD_UPDATE) {
+  console.log(&#x27;tldjs: updating rules from %s.&#x27;, updater.providerUrl);
+
+  updater.<span class="apidocCodeKeywordSpan">run</span>(function(err){
+if (err) {
+  console.error(err.message);
+  process.exit(err.code);
+}
+
+console.log(&#x27;tldjs: rules list updated.&#x27;);
+process.exit(0);
+...</pre></li>
     </ul>
 
 
